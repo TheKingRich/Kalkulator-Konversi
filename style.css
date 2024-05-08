@@ -1,0 +1,126 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Mengisi seluruh tinggi viewport */
+}
+
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: calc(100% - 22px); /* 22px for padding and border */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#output {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+:root {
+    --background-light: #f0f0f0;
+    --background-dark: #333;
+    --text-light: #333;
+    --text-dark: #f0f0f0;
+    --button-light: #4CAF50;
+    --button-dark: #1976D2;
+}
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+button {
+    background-color: var(--button-light);
+    color: white;
+}
+
+footer {
+    background-color: var(--button-light);
+    color: white;
+}
+.dark-theme {
+    --background-light: #333;
+    --background-dark: #f0f0f0;
+    --text-light: #f0f0f0;
+    --text-dark: #333;
+    --button-light: #1976D2;
+    --button-dark: #4CAF50;
+}
+footer {
+    background-color: #4CAF50; /* Warna hijau yang serupa dengan tombol */
+    padding: 20px 0;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__socials {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .contact__socials a {
+    padding: 7px 10px;
+    font-size: 1.5rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+  }
+  
+  .contact__socials a:hover {
+    background: var(--gradient-2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+.contact__socials a:hover {
+    color: #007bff;
+}
+
+.contact__socials i {
+    font-size: 24px;
+}
