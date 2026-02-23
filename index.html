@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Konversi</title>
-    <link  href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-    rel="stylesheet"/> 
+    <title>Kalkulator Konversi Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/> 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="toggleTheme()" id="themeButton"><i id="themeIcon" class="ri-moon-line"></i></button>
+    <button onclick="toggleTheme()" id="themeButton" title="Ganti Tema">
+        <i id="themeIcon" class="ri-moon-clear-line"></i>
+    </button>
 
     <div class="container">
-        <h2>Kalkulator Konversi</h2>
-        <input type="number" id="decimalInput" placeholder="Masukkan angka desimal">
-        <button onclick="convert()">Convert</button>
-        <div id="output"></div>
+        <div class="converter-card">
+            <div class="card-header">
+                <i class="ri-ruler-2-fill"></i>
+                <h2>Kalkulator Konversi</h2>
+                <p>Desimal ke Biner, Oktal, & Heksadesimal</p>
+            </div>
+
+            <div class="input-group">
+                <label for="decimalInput">Angka Desimal</label>
+                <div class="input-wrapper">
+                    <input type="number" id="decimalInput" placeholder="Contoh: 255">
+                </div>
+            </div>
+
+            <button onclick="convert()" id="btnConvert">
+                <span>Konversi Sekarang</span>
+                <i class="ri-arrow-right-line"></i>
+            </button>
+
+            <div id="output" class="output-area">
+                </div>
+        </div>
     </div>
+
     <footer>
+        <p>Hubungi Pengembang:</p>
         <div class="contact__socials">
             <a href="https://www.instagram.com/frederich_eugene"><i class="ri-instagram-fill"></i></a>
             <a href="https://t.me/panggilajaerick"><i class="ri-telegram-fill"></i></a>
