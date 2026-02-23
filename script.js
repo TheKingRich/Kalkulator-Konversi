@@ -1,34 +1,49 @@
 function convert() {
-    var decimalNumber = parseInt(document.getElementById("decimalInput").value);
+    const inputField = document.getElementById("decimalInput");
+    const decimalNumber = parseInt(inputField.value);
+    const outputDiv = document.getElementById("output");
 
     if (!isNaN(decimalNumber) && decimalNumber >= 0) {
-        var octalNumber = decimalNumber.toString(8);
-        var hexadecimalNumber = decimalNumber.toString(16).toUpperCase();
-        var binaryNumber = decimalToBinary(decimalNumber);
+        const octal = decimalNumber.toString(8);
+        const hex = decimalNumber.toString(16).toUpperCase();
+        const binary = decimalToBinary(decimalNumber);
 
-        document.getElementById("output").innerHTML = `
-            <p>Octal: ${octalNumber}</p>
-            <p>Hexadecimal: ${hexadecimalNumber}</p>
-            <p>Binary: ${binaryNumber}</p>
+        outputDiv.innerHTML = `
+            <div class="result-item">
+                <span class="result-label">Binary</span>
+                <span class="result-value">${binary}</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Octal</span>
+                <span class="result-value">${octal}</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Hexadecimal</span>
+                <span class="result-value">${hex}</span>
+            </div>
         `;
     } else {
-        document.getElementById("output").innerHTML = "Masukkan angka desimal dengan benar(tidak boleh negatif desimal) .";
+        outputDiv.innerHTML = `
+            <div style="color: #ef4444; font-size: 0.8rem; text-align: center;">
+                Silakan masukkan angka desimal positif.
+            </div>
+        `;
     }
 }
 
-function decimalToBinary(decimalNumber) {
-    var binaryNumber = decimalNumber.toString(2);
-    var paddedBinary = binaryNumber.padStart(4, '0'); // Menambahkan nol di depan untuk membuat panjang menjadi 4 digit
-    return paddedBinary;
+function decimalToBinary(num) {
+    return num.toString(2).padStart(4, '0');
 }
+
 function toggleTheme() {
-    var body = document.body;
-    body.classList.toggle("dark-theme");
+    const body = document.body;
+    const themeIcon = document.getElementById("themeIcon");
     
-    var themeButton = document.getElementById("themeButton");
+    body.classList.toggle("dark-theme");
+
     if (body.classList.contains("dark-theme")) {
-        themeButton.textContent = "Light-Theme";
+        themeIcon.className = "ri-sun-line";
     } else {
-        themeButton.textContent = "Dark-Theme";
+        themeIcon.className = "ri-moon-clear-line";
     }
 }
