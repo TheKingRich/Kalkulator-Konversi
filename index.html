@@ -8,43 +8,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button onclick="toggleTheme()" id="themeButton" title="Ganti Tema">
-        <i id="themeIcon" class="ri-moon-clear-line"></i>
+
+    <button onclick="toggleTheme()" id="themeButton">
+        <i id="themeIcon" class="ri-moon-line"></i>
+        <span id="themeText">Dark Mode</span>
     </button>
 
-    <div class="container">
+    <div class="main-wrapper">
         <div class="converter-card">
             <div class="card-header">
-                <i class="ri-ruler-2-fill"></i>
-                <h2>Kalkulator Konversi</h2>
-                <p>Desimal ke Biner, Oktal, & Heksadesimal</p>
-            </div>
-
-            <div class="input-group">
-                <label for="decimalInput">Angka Desimal</label>
-                <div class="input-wrapper">
-                    <input type="number" id="decimalInput" placeholder="Contoh: 255">
+                <div class="icon-box">
+                    <i class="ri-refresh-line"></i>
                 </div>
+                <h2>Kalkulator Konversi</h2>
+                <p>Ubah desimal ke biner, oktal, & heksa</p>
             </div>
 
-            <button onclick="convert()" id="btnConvert">
-                <span>Konversi Sekarang</span>
-                <i class="ri-arrow-right-line"></i>
-            </button>
+            <div class="input-section">
+                <label>Angka Desimal</label>
+                <input type="number" id="decimalInput" placeholder="Contoh: 255">
+                <button onclick="convert()" id="btnConvert">
+                    Konversi Sekarang <i class="ri-arrow-right-s-line"></i>
+                </button>
+            </div>
 
-            <div id="output" class="output-area">
+            <div id="output" class="result-container">
                 </div>
         </div>
     </div>
 
     <footer>
-        <p>Hubungi Pengembang:</p>
         <div class="contact__socials">
             <a href="https://www.instagram.com/frederich_eugene"><i class="ri-instagram-fill"></i></a>
             <a href="https://t.me/panggilajaerick"><i class="ri-telegram-fill"></i></a>
             <a href="https://twitter.com/FrederichEugene"><i class="ri-twitter-x-line"></i></a>
             <a href="https://www.tiktok.com/@michioglam"><i class="ri-tiktok-fill"></i></a>
         </div>
+        <p>© 2024 Eugene Dev</p>
     </footer>
     
     <script src="script.js"></script>
