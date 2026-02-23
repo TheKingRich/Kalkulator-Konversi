@@ -1,49 +1,35 @@
 function convert() {
-    const inputField = document.getElementById("decimalInput");
-    const decimalNumber = parseInt(inputField.value);
-    const outputDiv = document.getElementById("output");
+    const input = document.getElementById("decimalInput");
+    const decimalNumber = parseInt(input.value);
+    const output = document.getElementById("output");
 
     if (!isNaN(decimalNumber) && decimalNumber >= 0) {
         const octal = decimalNumber.toString(8);
         const hex = decimalNumber.toString(16).toUpperCase();
-        const binary = decimalToBinary(decimalNumber);
+        const binary = decimalNumber.toString(2).padStart(4, '0');
 
-        outputDiv.innerHTML = `
-            <div class="result-item">
-                <span class="result-label">Binary</span>
-                <span class="result-value">${binary}</span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Octal</span>
-                <span class="result-value">${octal}</span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Hexadecimal</span>
-                <span class="result-value">${hex}</span>
-            </div>
+        output.innerHTML = `
+            <div class="res-item"><span class="res-label">BINER</span><span class="res-value">${binary}</span></div>
+            <div class="res-item"><span class="res-label">OKTAL</span><span class="res-value">${octal}</span></div>
+            <div class="res-item"><span class="res-label">HEKSA</span><span class="res-value">${hex}</span></div>
         `;
     } else {
-        outputDiv.innerHTML = `
-            <div style="color: #ef4444; font-size: 0.8rem; text-align: center;">
-                Silakan masukkan angka desimal positif.
-            </div>
-        `;
+        output.innerHTML = "<p style='color: #ef4444; font-size: 0.8rem;'>Masukkan angka desimal yang valid!</p>";
     }
-}
-
-function decimalToBinary(num) {
-    return num.toString(2).padStart(4, '0');
 }
 
 function toggleTheme() {
     const body = document.body;
     const themeIcon = document.getElementById("themeIcon");
-    
+    const themeText = document.getElementById("themeText");
+
     body.classList.toggle("dark-theme");
 
     if (body.classList.contains("dark-theme")) {
         themeIcon.className = "ri-sun-line";
+        themeText.innerText = "Light Mode";
     } else {
-        themeIcon.className = "ri-moon-clear-line";
+        themeIcon.className = "ri-moon-line";
+        themeText.innerText = "Dark Mode";
     }
 }
